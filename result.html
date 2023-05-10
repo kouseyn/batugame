@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>結果ぺーじ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000bd;
+            color: #fff;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        #result {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>以下が罰ゲームです！</h1>
+
+<div id="result"></div>
+
+<button onclick="goBack()">ホームに戻る</button>
+
+<script>
+    // ホームに戻る関数
+    function goBack() {
+        window.history.back();
+    }
+
+    // URLパラメータから結果を取得
+    var urlParams = new URLSearchParams(window.location.search);
+    var result = urlParams.get('result');
+
+    // 結果を表示
+    var resultElement = document.getElementById('result');
+    resultElement.textContent = result;
+
+
+</script>
+</body>
+</html>
